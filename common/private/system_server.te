@@ -21,5 +21,9 @@ allow system_server pocket_judge_sysfs:file rw_file_perms;
 # Game space
 add_service(system_server, game_space_service);
 
+# Webview
+allow system_server webview_zygote:process setsched;
+allow system_server app_zygote:process setsched;
+
 # Let system server set vbmeta prop
 set_prop(system_server, bootloader_prop)

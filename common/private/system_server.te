@@ -20,3 +20,6 @@ allow system_server pocket_judge_sysfs:file rw_file_perms;
 
 # Game space
 add_service(system_server, game_space_service);
+
+# Let system server set vbmeta prop
+set_prop(system_server, bootloader_prop)
